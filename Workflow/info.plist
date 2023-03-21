@@ -104,7 +104,7 @@
 	<key>readme</key>
 	<string>## Usage
 
-Search [Metacritic](https://www.metacritic.com) for movies, TV shows, games, and music albums via the Ratings Keyword (default: `ratings`). &lt;kbd&gt;↩&lt;/kbd&gt; to open on the website.
+Search [Metacritic](https://www.metacritic.com) for movies, TV shows, games, and music albums via the `ratings` keyword. &lt;kbd&gt;↩&lt;/kbd&gt; to open on the website.
 
 ![Searching ratings](images/about/ratings.png)</string>
 	<key>uidata</key>
@@ -148,8 +148,6 @@ Search [Metacritic](https://www.metacritic.com) for movies, TV shows, games, and
 			<string>ratings_keyword</string>
 		</dict>
 	</array>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
 	<string>2022.1</string>
 	<key>webaddress</key>
