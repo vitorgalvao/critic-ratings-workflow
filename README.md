@@ -2,10 +2,10 @@
 
 See Metacritic ratings for movies, tv, games, and music
 
-<a href='https://alfred.app/workflows/vitor/critic-ratings'>⤓ Install From the Alfred Gallery</a>
+[⤓ Install on the Alfred Gallery](https://alfred.app/workflows/vitor/critic-ratings)
 
 ## Usage
 
-Search [Metacritic](https://www.metacritic.com) for movies, TV shows, games, and music albums via the Ratings Keyword (default: `ratings`). <kbd>⏎</kbd> to open on the website.
+Search [Metacritic](https://www.metacritic.com) for movies, TV shows, games, and music albums via the `ratings` keyword. <kbd>↩&#xFE0E;</kbd> to open on the website.
 
 ![Searching ratings](Workflow/images/about/ratings.png)
