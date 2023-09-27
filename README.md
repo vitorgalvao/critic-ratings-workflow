@@ -1,11 +1,14 @@
 # <img src='Workflow/icon.png' width='45' align='center' alt='icon'> Critic Ratings Alfred Workflow
 
-See Metacritic ratings for movies, tv, games, and music
+Search Metacritic ratings for movies, tv shows, and games
 
 [⤓ Install on the Alfred Gallery](https://alfred.app/workflows/vitor/critic-ratings)
 
 ## Usage
 
-Search [Metacritic](https://www.metacritic.com) for movies, TV shows, games, and music albums via the `ratings` keyword. <kbd>↩&#xFE0E;</kbd> to open on the website.
+Search [Metacritic](https://www.metacritic.com) for movies, TV shows, and games via the `ratings` keyword.
 
 ![Searching ratings](Workflow/images/about/ratings.png)
+
+* <kbd>↩&#xFE0E;</kbd>: Open entry on the website.
+* <kbd>⌥</kbd>: Show description.
