@@ -1,39 +1,55 @@
-#!/usr/bin/env ruby
+#!/usr/bin/osascript -l JavaScript
 
-require 'cgi'
-require 'json'
-require 'nokogiri'
-require 'open3'
+// Helpers
+function apiSearch(query) {
+  const task = $.NSTask.alloc.init
+  const stdout = $.NSPipe.pipe
+  const escapedQuery = encodeURIComponent(query)
+    .replace(/[!'()*]/g, (c) => `%${c.charCodeAt(0).toString(16).toUpperCase()}`)
 
-def no_results(query)
-  puts({ items: [title: "No results found for “#{query}”"] }.to_json)
-  exit 0
-end
+  task.executableURL = $.NSURL.alloc.initFileURLWithPath("/usr/bin/curl")
+  task.arguments = ["--silent", `https://fandom-prod.apigee.net/v1/xapi/composer/metacritic/pages/search/${escapedQuery}/web?&apiKey=1MOZgmNFxvmljaQR1X9KAij9Mo4xAY3u`]
+  task.standardOutput = stdout
+  task.launchAndReturnError(false)
 
-search_query = ARGV[0]
-escaped_query = CGI.escape(search_query)
-base_url = 'https://www.metacritic.com'
-site_url = "#{base_url}/search/all/#{escaped_query}/results"
+  const dataOut = stdout.fileHandleForReading.readDataToEndOfFileAndReturnError(false)
+  const stringOut = $.NSString.alloc.initWithDataEncoding(dataOut, $.NSUTF8StringEncoding).js
 
-page = Open3.capture2('curl', '--silent', '--location', '--user-agent', 'chrome', site_url).first
-results = Nokogiri::HTML(page).at('ul.search_results')
-no_results(search_query) if results.nil?
+  return JSON.parse(stringOut)
+}
 
-script_filter_items = []
+// Main
+function run(argv) {
+  const searchQuery = argv[0]
+  const entries = apiSearch(searchQuery)["components"][0]["data"]["items"]
 
-results.css('li.result').each do |result|
-  next if result.at('span.metascore_w').nil?
-  info = result.at('.basic_stats')
-  synopsis = result.at('p.deck.basic_stat').text.strip rescue 'No synopsis available.'
-  score = info.at('span.metascore_w').text
-  score_type = info.at('span.metascore_w').attr('class').match(%r{(positive|mixed|negative)}).to_s
-  title = info.at('h3.product_title > a').text.strip
-  subtitle = info.at('p').text.gsub(%r{\s{2,}}, ' ').strip
-  link = base_url + info.at('h3.product_title > a').attr('href')
+  if (entries.length === 0) return JSON.stringify({
+    items: [{
+      title: `No results found for “${searchQuery}”`,
+      valid: false
+    }]
+  })
 
-  script_filter_items.push(title: title, subtitle: "#{score} / #{subtitle}", icon: { path: "images/#{score_type}.png" }, mods: { alt: { subtitle: synopsis } }, quicklookurl: link, arg: link)
-end
+  const sfItems = entries.map(entry => {
+    const title = entry["title"]
+    const type = entry["type"] === "movie" ? "Movie" : (entry["type"] === "show" ? "TV Show" : "Game")
+    const year = entry["premiereYear"]
+    const score = entry["criticScoreSummary"]["score"]
+    const url = `https://metacritic.com${entry["criticScoreSummary"]["url"]}`
+    const description = entry["description"]
+    const must = entry["mustSee"] || entry["mustWatch"] || entry["mustPlay"]
+    const scoreType = must ? "positive" : (score > 60 ? "mixed" : "negative")
 
-no_results(search_query) if script_filter_items.empty?
+    if (score === 0 || score === null) return undefined
 
-puts({ items: script_filter_items }.to_json)
+    return {
+      title: title,
+      subtitle: `${score} · ${type}, ${year}`,
+      arg: url,
+      icon: { path: `images/${scoreType}.png` },
+      mods: { alt: { subtitle: description } }
+    }
+  }).filter(item => item)
+
+  return JSON.stringify({ items: sfItems })
+}

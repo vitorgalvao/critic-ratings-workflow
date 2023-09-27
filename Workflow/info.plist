@@ -23,7 +23,7 @@
 	<key>createdby</key>
 	<string>Vítor Galvão</string>
 	<key>description</key>
-	<string>See Metacritic ratings for movies, tv, games, and music</string>
+	<string>Search Metacritic ratings for movies, tv shows, and games</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -54,7 +54,7 @@
 				<key>queuedelaymode</key>
 				<integer>1</integer>
 				<key>queuemode</key>
-				<integer>1</integer>
+				<integer>2</integer>
 				<key>runningsubtext</key>
 				<string>Contacting Metacritic…</string>
 				<key>script</key>
@@ -104,9 +104,12 @@
 	<key>readme</key>
 	<string>## Usage
 
-Search [Metacritic](https://www.metacritic.com) for movies, TV shows, games, and music albums via the `ratings` keyword. &lt;kbd&gt;↩&lt;/kbd&gt; to open on the website.
+Search [Metacritic](https://www.metacritic.com) for movies, TV shows, and games via the `ratings` keyword.
 
-![Searching ratings](images/about/ratings.png)</string>
+![Searching ratings](images/about/ratings.png)
+
+* &lt;kbd&gt;↩&lt;/kbd&gt;: Open entry on the website.
+* &lt;kbd&gt;⌥&lt;/kbd&gt;: Show description.</string>
 	<key>uidata</key>
 	<dict>
 		<key>1A78E27E-363C-4575-B0DE-587838EFA355</key>
