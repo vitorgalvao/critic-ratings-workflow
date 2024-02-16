@@ -63,6 +63,8 @@
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string>metacritic</string>
+				<key>skipuniversalaction</key>
+				<true/>
 				<key>subtext</key>
 				<string>Ratings from Metacritic</string>
 				<key>title</key>
