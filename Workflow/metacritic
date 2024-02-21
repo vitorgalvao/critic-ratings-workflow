@@ -8,7 +8,7 @@ function apiSearch(query) {
     .replace(/[!'()*]/g, (c) => `%${c.charCodeAt(0).toString(16).toUpperCase()}`)
 
   task.executableURL = $.NSURL.fileURLWithPath("/usr/bin/curl")
-  task.arguments = ["--silent", `https://fandom-prod.apigee.net/v1/xapi/composer/metacritic/pages/search/${escapedQuery}/web?&apiKey=1MOZgmNFxvmljaQR1X9KAij9Mo4xAY3u`]
+  task.arguments = ["--silent", `https://internal-prod.apigee.fandom.net/v1/xapi/composer/metacritic/pages/search/${escapedQuery}/web?&apiKey=1MOZgmNFxvmljaQR1X9KAij9Mo4xAY3u`]
   task.standardOutput = stdout
   task.launchAndReturnError(false)
 
