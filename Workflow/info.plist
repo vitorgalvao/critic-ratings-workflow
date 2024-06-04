@@ -36,7 +36,17 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>1A78E27E-363C-4575-B0DE-587838EFA355</string>
+				<string>60BB03CF-3C47-44A7-B771-0280E21CFB17</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Search Manga</string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A26E6104-0846-4AA3-BDCF-A8F2A3C4B4BD</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -44,18 +54,8 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>60BB03CF-3C47-44A7-B771-0280E21CFB17</string>
-				<key>modifiers</key>
-				<integer>524288</integer>
-				<key>modifiersubtext</key>
-				<string>Search Manga</string>
-				<key>vitoclose</key>
-				<true/>
-			</dict>
 		</array>
-		<key>A54200DB-B70F-4C76-9F19-F8C1F649BB92</key>
+		<key>8E526FE2-15B0-4AE4-B3E7-64C1A4DF3520</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -67,11 +67,37 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+		</array>
+		<key>A26E6104-0846-4AA3-BDCF-A8F2A3C4B4BD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8E526FE2-15B0-4AE4-B3E7-64C1A4DF3520</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>A54200DB-B70F-4C76-9F19-F8C1F649BB92</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A26E6104-0846-4AA3-BDCF-A8F2A3C4B4BD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 			<dict>
 				<key>destinationuid</key>
 				<string>C14BA972-3BB7-49E9-BBA7-135B08D0BD0C</string>
 				<key>modifiers</key>
-				<integer>524288</integer>
+				<integer>1048576</integer>
 				<key>modifiersubtext</key>
 				<string>Search Anime</string>
 				<key>vitoclose</key>
@@ -95,34 +121,13 @@
 	<key>createdby</key>
 	<string>Vítor Galvão</string>
 	<key>description</key>
-	<string>Get ratings for movies, TV shows, anime, and manga</string>
+	<string>See ratings for movies, TV shows, anime, and manga</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
 	<string>Critic Ratings</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>skipqueryencode</key>
-				<false/>
-				<key>skipvarencode</key>
-				<false/>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>1A78E27E-363C-4575-B0DE-587838EFA355</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -173,6 +178,27 @@
 			<string>325E0A83-2F46-4696-80F4-7D41608F65DC</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>1A78E27E-363C-4575-B0DE-587838EFA355</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -265,6 +291,22 @@
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>60BB03CF-3C47-44A7-B771-0280E21CFB17</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>A26E6104-0846-4AA3-BDCF-A8F2A3C4B4BD</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>8E526FE2-15B0-4AE4-B3E7-64C1A4DF3520</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -370,20 +412,24 @@ Search [Metacritic](https://www.metacritic.com) for movies, TV shows, and games 
 
 ![Searching metacritic](images/about/metacritic.png)
 
-* &lt;kbd&gt;↩&lt;/kbd&gt; Open entry on the website.
+* &lt;kbd&gt;↩&lt;/kbd&gt; Open entry on website.
 * &lt;kbd&gt;⌥&lt;/kbd&gt; Show description.
 
 Search [AniList](htts://anilist.co) via the `anime` and `manga` keywords.
 
-* &lt;kbd&gt;↩&lt;/kbd&gt; Open entry on the website.
-* &lt;kbd&gt;⌘&lt;/kbd&gt; Show description.
-* &lt;kbd&gt;⌥&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Flip between searching anime or manga.</string>
+![Searching anime](images/about/anime.png)
+
+![Searching manga](images/about/manga.png)
+
+* &lt;kbd&gt;↩&lt;/kbd&gt; Open entry on website.
+* &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Flip between searching anime or manga.
+* &lt;kbd&gt;⌥&lt;/kbd&gt; Show description.</string>
 	<key>uidata</key>
 	<dict>
 		<key>1A78E27E-363C-4575-B0DE-587838EFA355</key>
 		<dict>
 			<key>xpos</key>
-			<real>240</real>
+			<real>640</real>
 			<key>ypos</key>
 			<real>20</real>
 		</dict>
@@ -415,26 +461,40 @@ Search [AniList](htts://anilist.co) via the `anime` and `manga` keywords.
 			<key>ypos</key>
 			<real>155</real>
 		</dict>
+		<key>8E526FE2-15B0-4AE4-B3E7-64C1A4DF3520</key>
+		<dict>
+			<key>xpos</key>
+			<real>540</real>
+			<key>ypos</key>
+			<real>255</real>
+		</dict>
+		<key>A26E6104-0846-4AA3-BDCF-A8F2A3C4B4BD</key>
+		<dict>
+			<key>xpos</key>
+			<real>240</real>
+			<key>ypos</key>
+			<real>255</real>
+		</dict>
 		<key>A54200DB-B70F-4C76-9F19-F8C1F649BB92</key>
 		<dict>
 			<key>xpos</key>
 			<real>30</real>
 			<key>ypos</key>
-			<real>290</real>
+			<real>295</real>
 		</dict>
 		<key>C14BA972-3BB7-49E9-BBA7-135B08D0BD0C</key>
 		<dict>
 			<key>xpos</key>
 			<real>240</real>
 			<key>ypos</key>
-			<real>320</real>
+			<real>325</real>
 		</dict>
 		<key>E109118E-9402-4762-84EA-B5B63E024116</key>
 		<dict>
 			<key>xpos</key>
 			<real>390</real>
 			<key>ypos</key>
-			<real>290</real>
+			<real>295</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
@@ -454,7 +514,7 @@ Search [AniList](htts://anilist.co) via the `anime` and `manga` keywords.
 			<key>description</key>
 			<string></string>
 			<key>label</key>
-			<string>metacritic Keyword</string>
+			<string>Metacritic Keyword</string>
 			<key>type</key>
 			<string>textfield</string>
 			<key>variable</key>
@@ -551,31 +611,6 @@ Search [AniList](htts://anilist.co) via the `anime` and `manga` keywords.
 			<string>slider</string>
 			<key>variable</key>
 			<string>positive_threshold</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>defaultvalue</key>
-				<integer>9</integer>
-				<key>markercount</key>
-				<integer>20</integer>
-				<key>maxvalue</key>
-				<integer>20</integer>
-				<key>minvalue</key>
-				<integer>1</integer>
-				<key>onlystoponmarkers</key>
-				<true/>
-				<key>showmarkers</key>
-				<true/>
-			</dict>
-			<key>description</key>
-			<string></string>
-			<key>label</key>
-			<string>Maximum Results</string>
-			<key>type</key>
-			<string>slider</string>
-			<key>variable</key>
-			<string>max_results</string>
 		</dict>
 	</array>
 	<key>version</key>
