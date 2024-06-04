@@ -1,6 +1,20 @@
 #!/usr/bin/osascript -l JavaScript
 
 // Helpers
+function envVar(varName) {
+  return $.NSProcessInfo
+    .processInfo
+    .environment
+    .objectForKey(varName).js
+}
+
+function scoreSentiment(score, negativeThreshold, positiveThreshold) {
+  if (!score) return "unrated"
+  if (score < negativeThreshold) return "negative"
+  if (score >= positiveThreshold) return "positive"
+  return "mixed"
+}
+
 function apiSearch(query) {
   const task = $.NSTask.alloc.init
   const stdout = $.NSPipe.pipe
@@ -21,6 +35,8 @@ function apiSearch(query) {
 // Main
 function run(argv) {
   const searchQuery = argv[0]
+  const negativeThreshold = parseInt(envVar("negative_threshold"))
+  const positiveThreshold = parseInt(envVar("positive_threshold"))
   const entries = apiSearch(searchQuery)["components"][0]["data"]["items"]
 
   if (entries.length === 0) return JSON.stringify({
@@ -37,16 +53,12 @@ function run(argv) {
     const score = entry["criticScoreSummary"]["score"]
     const url = `https://metacritic.com${entry["criticScoreSummary"]["url"]}`
     const description = entry["description"]
-    const must = entry["mustSee"] || entry["mustWatch"] || entry["mustPlay"]
-    const scoreType = must ? "positive" : (score > 60 ? "mixed" : "negative")
-
-    if (score === 0 || score === null) return undefined
 
     return {
       title: title,
-      subtitle: `${score} · ${type}, ${year}`,
+      subtitle: `${score || "Unrated"} · ${type} · ${year}`,
       arg: url,
-      icon: { path: `images/${scoreType}.png` },
+      icon: { path: `images/${scoreSentiment(score, negativeThreshold, positiveThreshold)}.png` },
       mods: { alt: { subtitle: description } }
     }
   }).filter(item => item)
