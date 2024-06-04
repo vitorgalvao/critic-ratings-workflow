@@ -135,7 +135,7 @@ function run(argv) {
       arg: pageURL,
       quicklookurl: item.coverImage.extraLarge,
       icon: { path: `images/${scoreSentiment(score, negativeThreshold, positiveThreshold)}.png` },
-      mods: { alt: { subtitle: item.description.replace(/<.+?>/g, "") } }
+      mods: { alt: { subtitle: item.description?.replace(/<.+?>/g, "") || "N/A" } }
     }
   })
 
