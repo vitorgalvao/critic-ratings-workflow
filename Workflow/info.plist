@@ -131,6 +131,27 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>1A78E27E-363C-4575-B0DE-587838EFA355</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -178,27 +199,6 @@
 			<string>325E0A83-2F46-4696-80F4-7D41608F65DC</string>
 			<key>version</key>
 			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>skipqueryencode</key>
-				<false/>
-				<key>skipvarencode</key>
-				<false/>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>1A78E27E-363C-4575-B0DE-587838EFA355</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -298,7 +298,7 @@
 			<key>type</key>
 			<string>alfred.workflow.utility.junction</string>
 			<key>uid</key>
-			<string>A26E6104-0846-4AA3-BDCF-A8F2A3C4B4BD</string>
+			<string>8E526FE2-15B0-4AE4-B3E7-64C1A4DF3520</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -306,7 +306,7 @@
 			<key>type</key>
 			<string>alfred.workflow.utility.junction</string>
 			<key>uid</key>
-			<string>8E526FE2-15B0-4AE4-B3E7-64C1A4DF3520</string>
+			<string>A26E6104-0846-4AA3-BDCF-A8F2A3C4B4BD</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -415,7 +415,7 @@ Search [Metacritic](https://www.metacritic.com) for movies, TV shows, and games 
 * &lt;kbd&gt;↩&lt;/kbd&gt; Open entry on website.
 * &lt;kbd&gt;⌥&lt;/kbd&gt; Show description.
 
-Search [AniList](htts://anilist.co) via the `anime` and `manga` keywords.
+Search [AniList](https://anilist.co) via the `anime` and `manga` keywords.
 
 ![Searching anime](images/about/anime.png)
 
