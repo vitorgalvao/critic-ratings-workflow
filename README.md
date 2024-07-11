@@ -13,7 +13,7 @@ Search [Metacritic](https://www.metacritic.com) for movies, TV shows, and games 
 * <kbd>↩&#xFE0E;</kbd> Open entry on website.
 * <kbd>⌥</kbd> Show description.
 
-Search [AniList](htts://anilist.co) via the `anime` and `manga` keywords.
+Search [AniList](https://anilist.co) via the `anime` and `manga` keywords.
 
 ![Searching anime](Workflow/images/about/anime.png)
 
