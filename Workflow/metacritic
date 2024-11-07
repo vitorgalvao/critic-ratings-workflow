@@ -22,7 +22,7 @@ function apiSearch(query) {
     .replace(/[!'()*]/g, (c) => `%${c.charCodeAt(0).toString(16).toUpperCase()}`)
 
   task.executableURL = $.NSURL.fileURLWithPath("/usr/bin/curl")
-  task.arguments = ["--silent", `https://internal-prod.apigee.fandom.net/v1/xapi/composer/metacritic/pages/search/${escapedQuery}/web?&apiKey=1MOZgmNFxvmljaQR1X9KAij9Mo4xAY3u`]
+  task.arguments = ["--silent", `https://backend.metacritic.com/v1/xapi/finder/metacritic/autosuggest/${escapedQuery}?apiKey=1MOZgmNFxvmljaQR1X9KAij9Mo4xAY3u`]
   task.standardOutput = stdout
   task.launchAndReturnError(false)
 
@@ -37,7 +37,7 @@ function run(argv) {
   const searchQuery = argv[0]
   const negativeThreshold = parseInt(envVar("negative_threshold"))
   const positiveThreshold = parseInt(envVar("positive_threshold"))
-  const entries = apiSearch(searchQuery)["components"][0]["data"]["items"]
+  const entries = apiSearch(searchQuery)["data"]["items"]
 
   if (entries.length === 0) return JSON.stringify({
     items: [{
