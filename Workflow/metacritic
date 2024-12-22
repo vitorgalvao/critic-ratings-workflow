@@ -41,7 +41,8 @@ function run(argv) {
 
   if (entries.length === 0) return JSON.stringify({
     items: [{
-      title: `No results found for “${searchQuery}”`,
+      title: "No results",
+      subtitle: `No matches found for “${searchQuery}”`,
       valid: false
     }]
   })
