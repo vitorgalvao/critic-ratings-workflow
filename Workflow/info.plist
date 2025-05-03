@@ -131,27 +131,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>skipqueryencode</key>
-				<false/>
-				<key>skipvarencode</key>
-				<false/>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>1A78E27E-363C-4575-B0DE-587838EFA355</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -173,7 +152,7 @@
 				<key>queuedelaymode</key>
 				<integer>1</integer>
 				<key>queuemode</key>
-				<integer>2</integer>
+				<integer>1</integer>
 				<key>runningsubtext</key>
 				<string>Searching…</string>
 				<key>script</key>
@@ -199,6 +178,27 @@
 			<string>325E0A83-2F46-4696-80F4-7D41608F65DC</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>1A78E27E-363C-4575-B0DE-587838EFA355</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -298,7 +298,7 @@
 			<key>type</key>
 			<string>alfred.workflow.utility.junction</string>
 			<key>uid</key>
-			<string>8E526FE2-15B0-4AE4-B3E7-64C1A4DF3520</string>
+			<string>A26E6104-0846-4AA3-BDCF-A8F2A3C4B4BD</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -306,7 +306,7 @@
 			<key>type</key>
 			<string>alfred.workflow.utility.junction</string>
 			<key>uid</key>
-			<string>A26E6104-0846-4AA3-BDCF-A8F2A3C4B4BD</string>
+			<string>8E526FE2-15B0-4AE4-B3E7-64C1A4DF3520</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
