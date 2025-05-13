@@ -22,7 +22,7 @@ function apiSearch(query) {
     .replace(/[!'()*]/g, (c) => `%${c.charCodeAt(0).toString(16).toUpperCase()}`)
 
   task.executableURL = $.NSURL.fileURLWithPath("/usr/bin/curl")
-  task.arguments = ["--silent", `https://backend.metacritic.com/v1/xapi/finder/metacritic/autosuggest/${escapedQuery}?apiKey=1MOZgmNFxvmljaQR1X9KAij9Mo4xAY3u`]
+  task.arguments = ["--silent", `https://backend.metacritic.com/composer/metacritic/pages/search/${escapedQuery}/web?&apiKey=1MOZgmNFxvmljaQR1X9KAij9Mo4xAY3u`]
   task.standardOutput = stdout
   task.launchAndReturnError(false)
 
@@ -37,7 +37,8 @@ function run(argv) {
   const searchQuery = argv[0]
   const negativeThreshold = parseInt(envVar("negative_threshold"))
   const positiveThreshold = parseInt(envVar("positive_threshold"))
-  const entries = apiSearch(searchQuery)["data"]["items"]
+  const validTypes = { movie: "Movie", show: "TV Show", "game-title": "Game" }
+  const entries = apiSearch(searchQuery)["components"][0]["data"]["items"]
 
   if (entries.length === 0) return JSON.stringify({
     items: [{
@@ -47,9 +48,11 @@ function run(argv) {
     }]
   })
 
-  const sfItems = entries.map(entry => {
+  const sfItems = entries.flatMap(entry => {
+    const type = validTypes[entry["type"]]
+    if (!type) return []
+
     const title = entry["title"]
-    const type = entry["type"] === "movie" ? "Movie" : (entry["type"] === "show" ? "TV Show" : "Game")
     const year = entry["premiereYear"]
     const score = entry["criticScoreSummary"]["score"]
     const url = `https://metacritic.com${entry["criticScoreSummary"]["url"]}`
