@@ -22,7 +22,7 @@ function apiSearch(query) {
     .replace(/[!'()*]/g, (c) => `%${c.charCodeAt(0).toString(16).toUpperCase()}`)
 
   task.executableURL = $.NSURL.fileURLWithPath("/usr/bin/curl")
-  task.arguments = ["--silent", `https://backend.metacritic.com/v1/xapi/finder/metacritic/autosuggest/${escapedQuery}?apiKey=1MOZgmNFxvmljaQR1X9KAij9Mo4xAY3u`]
+  task.arguments = ["--silent", `https://backend.metacritic.com/finder/metacritic/autosuggest/${escapedQuery}?apiKey=1MOZgmNFxvmljaQR1X9KAij9Mo4xAY3u`]
   task.standardOutput = stdout
   task.launchAndReturnError(false)
 
