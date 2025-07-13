@@ -614,7 +614,7 @@ Search [AniList](https://anilist.co) via the `anime` and `manga` keywords.
 		</dict>
 	</array>
 	<key>version</key>
-	<string>2025.1</string>
+	<string>25.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/vitorgalvao/critic-ratings-workflow/</string>
 </dict>

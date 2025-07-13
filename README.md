@@ -10,7 +10,7 @@ Search [Metacritic](https://www.metacritic.com) for movies, TV shows, and games 
 
 ![Searching metacritic](Workflow/images/about/metacritic.png)
 
-* <kbd>↩&#xFE0E;</kbd> Open entry on website.
+* <kbd>↩</kbd> Open entry on website.
 * <kbd>⌥</kbd> Show description.
 
 Search [AniList](https://anilist.co) via the `anime` and `manga` keywords.
@@ -19,6 +19,6 @@ Search [AniList](https://anilist.co) via the `anime` and `manga` keywords.
 
 ![Searching manga](Workflow/images/about/manga.png)
 
-* <kbd>↩&#xFE0E;</kbd> Open entry on website.
-* <kbd>⌘</kbd><kbd>↩&#xFE0E;</kbd> Flip between searching anime or manga.
+* <kbd>↩</kbd> Open entry on website.
+* <kbd>⌘</kbd><kbd>↩</kbd> Flip between searching anime or manga.
 * <kbd>⌥</kbd> Show description.
